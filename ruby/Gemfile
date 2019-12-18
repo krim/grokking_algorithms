@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+
+gem 'dry-initializer', require: false
+gem 'dry-system', require: false
+gem 'dry-types', require: false
+
+group :development, :test do
+  gem 'pry-byebug', require: false
+end
+
+group :development do
+  gem 'reek', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+end
+
+group :test do
+  gem 'rspec', require: false
+end
