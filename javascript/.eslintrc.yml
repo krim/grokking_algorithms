@@ -1,0 +1,9 @@
+env:
+  node: true
+  es6: true
+  commonjs: true
+  jest: true
+
+parserOptions:
+  ecmaVersion: 9
+  sourceType: module

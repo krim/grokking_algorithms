@@ -1,0 +1,17 @@
+{
+  "name": "grokking_alkorithms",
+  "version": "1.0.0",
+  "description": "Algo labs",
+  "scripts": {
+    "eslint": "eslint src/**/*.js",
+    "test": "npm run eslint && jest",
+    "jest": "jest"
+  },
+  "author": "Rodionov Pavel",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "24.9.0",
+    "eslint": "6.8.0",
+    "jest": "24.9.0"
+  }
+}
