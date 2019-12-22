@@ -3,3 +3,5 @@
 ## Algorithms:
 ### Ruby
   - BinarySearch
+### JavaScript
+  - BinarySearch
