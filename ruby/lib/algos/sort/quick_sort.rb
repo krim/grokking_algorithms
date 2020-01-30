@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# https://en.wikipedia.org/wiki/Quicksort
+
 module Sort
   module QuickSort
     module_function

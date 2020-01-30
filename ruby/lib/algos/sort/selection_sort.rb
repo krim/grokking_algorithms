@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# https://en.wikipedia.org/wiki/Selection_sort
+
 module Sort
   module SelectionSort
     module_function

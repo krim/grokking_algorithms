@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# https://en.wikipedia.org/wiki/Binary_search_algorithm
+
 class BinarySearch
   extend Dry::Initializer
   extend Callable

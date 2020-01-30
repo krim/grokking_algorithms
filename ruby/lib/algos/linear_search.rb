@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# https://en.wikipedia.org/wiki/Linear_search
+
 class LinearSearch
   extend Dry::Initializer
   extend Callable
