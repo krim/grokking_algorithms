@@ -37,3 +37,6 @@ Layout/EndAlignment:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
+RSpec/MultipleExpectations:
+  Max: 5
