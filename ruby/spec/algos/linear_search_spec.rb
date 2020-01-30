@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe BinarySearch do
+describe LinearSearch do
   subject(:found_element) { described_class.call(array, element) }
 
   let(:array) { (1..100).to_a }
