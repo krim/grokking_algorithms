@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Sort::QuickSort do
+describe Sort::SelectionSort do
   subject(:sorted_array) { described_class.call(array) }
 
   let(:array) { [1, 9, 5, 4, 2, 15, 12, 5, -5, 30, 8, 17, 16, 15, 12, 24] }

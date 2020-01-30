@@ -4,7 +4,7 @@ module Sort
   module QuickSort
     module_function
 
-    def sort(array)
+    def call(array)
       return array if array.size < 2
 
       # https://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot
@@ -19,7 +19,7 @@ module Sort
         element < pivot ? left_array.push(element) : right_array.push(element)
       end
 
-      sort(left_array) + [pivot] + sort(right_array)
+      call(left_array) + [pivot] + call(right_array)
     end
   end
 end
