@@ -33,6 +33,7 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+
       - name: Install dependencies
         run: |
           sudo apt-get -yqq install software-properties-common curl libfontconfig
