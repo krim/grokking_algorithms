@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+defaults:
+  run:
+    working-directory: ./ruby
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  ruby:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.2
+      - run: ruby -v
+
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -yqq install software-properties-common curl libfontconfig
+          sudo apt-get -yqq install pkg-config gcc ruby-dev libxslt-dev libxml2-dev zlib1g-dev
+          sudo gem install bundler --no-document
+
+      - name: Bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install -j $(nproc) --retry 3 --jobs 4
+
+      - name: Run rubocop
+        run: bundle exec rubocop -D -P
+
+      - name: Run rspec
+        run: bundle exec rspec spec
