@@ -1,0 +1,43 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/ruby"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: rubocop-performance
+    versions:
+    - 1.10.0
+    - 1.10.1
+    - 1.10.2
+  - dependency-name: rubocop-rspec
+    versions:
+    - 2.2.0
+  - dependency-name: dry-types
+    versions:
+    - 1.5.0
+  - dependency-name: reek
+    versions:
+    - 6.0.3
+- package-ecosystem: npm
+  directory: "/javascript"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
